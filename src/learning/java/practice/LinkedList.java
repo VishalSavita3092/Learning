@@ -49,7 +49,7 @@ public class LinkedList {
         else {
             Node temp = head;
             int i=0;
-            while (i<index){
+            while (i<index-1){
                 temp = temp.next;
                 i++;
             }
@@ -75,6 +75,35 @@ public class LinkedList {
                 return;
             }
             prev.next = temp.next;;
+    }
+
+//    Deleting the first Node from the list
+
+    public void deleteFirst(){
+        if(head == null){
+            return;
+        }
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+    }
+
+//    Deleting last Node from the Linked List
+
+    public void deleteAtLast(){
+        if(head == null || head.next == null){
+            return ;
+        }
+
+            Node temp = head;
+            Node prev = null;
+
+            while (temp.next != null){
+                prev = temp;
+                temp = temp.next;
+            }
+            prev.next = null;
+
     }
 
 //    Printing the whole Linked List
